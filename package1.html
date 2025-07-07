@@ -1,0 +1,53 @@
+<!-- package1.html -->
+<!-- Save this as package1.html and duplicate/edit for package2, package3, etc. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Package 1 - Photography Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Photography</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Package 1</h2>
+    <div class="gallery">
+      <img src="images/package1/img1.jpg" alt="Image 1">
+      <img src="images/package1/img2.jpg" alt="Image 2">
+      <img src="images/package1/img3.jpg" alt="Image 3">
+    </div>
+  </div>
+
+  <div class="fullscreen hidden" id="fullscreen-viewer">
+    <img id="fullscreen-img" src="" alt="Fullscreen">
+  </div>
+
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+  <script>
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        const viewer = document.getElementById("fullscreen-viewer");
+        const fullImg = document.getElementById("fullscreen-img");
+        fullImg.src = img.src;
+        viewer.classList.remove("hidden");
+      });
+    });
+
+    document.getElementById("fullscreen-viewer").addEventListener("click", () => {
+      document.getElementById("fullscreen-viewer").classList.add("hidden");
+    });
+  </script>
+</body>
+</html>
